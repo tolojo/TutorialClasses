@@ -2,7 +2,6 @@ package tutorial1.tutorial1.controllers;
 
 import java.util.ArrayList;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tutorial1.tutorial1.models.Student;
 import tutorial1.tutorial1.models.StudentRepository;
+import tutorial1.tutorial1.models.exceptions.NotFoundException;
 
 
 @RestController
@@ -28,12 +28,18 @@ public class StudentController {
  logger.info("Sending all students");
  return StudentRepository.getStudents();
  }
+ 
  @GetMapping(path = "{number}",
  produces= MediaType.APPLICATION_JSON_VALUE)
- public Student getStudent(@PathVariable("number") int number) {
-    logger.info("Receive a student number and send a student name");
-    return StudentRepository.getStudent(number);
+ public Student getStudent(@PathVariable("number") int number)
+ throws NotFoundException{
+ logger.info("Sending student with number "+number);
+ Student student = StudentRepository.getStudent(number);
+ if (student != null) return student;
+ else throw new NotFoundException(""+number, "Student", "number");
  }
+
+
  @DeleteMapping(path = "{number}",
  produces= MediaType.APPLICATION_JSON_VALUE)
  public Response deleteStudent(@PathVariable("number") int number) {
@@ -49,15 +55,6 @@ public class StudentController {
     return StudentRepository.addStudent(student);
  }
 
- public class Response {
-    private String message;
-    private Object object;
-    public Response(String message, Object object) {
-    this.message = message;
-    this.object = object;
-    }
-    public String getMessage() { return message; }
-    public Object getObject() { return object; }
-   }
+
    
 }
