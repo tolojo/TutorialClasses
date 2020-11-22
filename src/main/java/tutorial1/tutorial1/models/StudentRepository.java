@@ -5,8 +5,7 @@ import java.util.ArrayList;
 
 public class StudentRepository {
     
-    private static ArrayList<Student> students =
-    new ArrayList<Student>();
+    private static ArrayList<Student> students = new ArrayList<Student>();
     public static void populate() {
     Student s; // auxiliary variable
     s = new Student("John",LocalDate.parse("2000-05-24"),'M');

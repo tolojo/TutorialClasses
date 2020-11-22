@@ -10,7 +10,7 @@ public class Student {
  private char gender;
  private int number;
  private ArrayList<Unit> units;
-private ArrayList<Enrolment> enrolments;
+ private ArrayList<Enrolment> enrolments;
 
 
 

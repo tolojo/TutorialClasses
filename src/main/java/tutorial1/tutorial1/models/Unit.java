@@ -17,7 +17,7 @@ enrolments = new ArrayList<Enrolment>();
   }
     
   public int getId(){ return id; }
-  public String getNmae(){ return name;}
+  public String getName(){ return name;}
   public int getCredits(){ return credits;}
   public ArrayList<Student> getStudents(){ return students;}
   public ArrayList<Enrolment> getEnrolments(){return enrolments;}
