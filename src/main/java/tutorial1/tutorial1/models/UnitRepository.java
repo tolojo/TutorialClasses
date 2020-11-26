@@ -7,18 +7,18 @@ import java.util.ArrayList;
 
 public class UnitRepository {
     
-    private static ArrayList<UnitRepository> unit = new ArrayList<UnitRepository>();
+    private static ArrayList<Unit> unit = new ArrayList<Unit>();
     public static void populate() {
-    Unit u; // auxiliary variable
-    u = new Unit(15,"AB",10);
-    unit.add(u);
+   
+    unit.add(new Unit(16,"AC",11));
+    unit.add(new Unit(15,"AB",10));
     }
    
-    public static ArrayList<UnitRepository> getUnits() { return unit; }
+    public static ArrayList<Unit> getUnits() { return unit; }
     
     public static Unit getUnit(int id) {
         for (Unit units: unit)
-            if (unit.getId() == id)
+            if (units.getId() == id)
                 return units;
         return null;
         }
