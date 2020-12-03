@@ -8,6 +8,7 @@ public class Unit {
   private int credits;
   private ArrayList<Student> students;
   private ArrayList<Enrolment> enrolments;
+  private ArrayList<EnrolmentTeacher> enrolmentsTeacher;
   public Unit(int id, String name, int credits){
 this.id=id;
 this.name=name;
@@ -21,6 +22,7 @@ enrolments = new ArrayList<Enrolment>();
   public int getCredits(){ return credits;}
   public ArrayList<Student> getStudents(){ return students;}
   public ArrayList<Enrolment> getEnrolments(){return enrolments;}
+  public ArrayList<EnrolmentTeacher>getEnrolmentsTeacher(){return enrolmentsTeacher;}
 
 
 

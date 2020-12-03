@@ -43,7 +43,7 @@ public class Student extends Person {
 public ArrayList<Unit> getUnits(){ return units;}
 public Enrolment getEnrolmentByUnitId(int unitId){
     for (Enrolment enr:enrolments)
-        if (enr.getUnit().getId()==unitId)return enr;
+    if (enr.getUnit().getId()==unitId)return enr;
     return null;
 }
 public void enroll(Unit unit) {

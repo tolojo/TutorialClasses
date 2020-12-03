@@ -10,14 +10,12 @@ public class Enrolment{
         this.grade=grade;
     }
 
-    public Student getStudent() {
-        return student;
-    }
+    public Student getStudent() { return student;}
+       
+    public void setStudent(Student student) { this.student = student; }
+   
 
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
+      
     public Unit getUnit() {
         return unit;
     }
