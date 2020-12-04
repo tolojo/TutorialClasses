@@ -5,13 +5,14 @@ import java.util.ArrayList;
 
 public class TeacherRepository {
     private static ArrayList<Teacher> teachers = new ArrayList<Teacher>();
-    private static ArrayList<Unit> units= new ArrayList<Unit>();
-    Unit unit;
-    Teacher teacher;
+    
+    private Unit unit;
+    
 
     public static void populate(){
         Teacher t;
         t= new Teacher("Joao", 'M',LocalDate.parse("1980-5-21"));
+     
         teachers.add(t);
     }
 
@@ -26,19 +27,24 @@ public class TeacherRepository {
         return null;
     }
 
-    public static Unit getUnit(Teacher teacher) {
-        for (Teacher teacher : teachers)
-            if (teacher.getUnits() == unit)
-        return unit;
+    public static Unit getUnit(Unit unit) {
+        for(Teacher teacher: teachers)
+        {
+            teacher.getUnits() = unit;
+        
+        
+        }
 
-        return null;
+            
+       
+       
     }
 
-    public static addUnit(){
+  //  public static addUnit(){
 
 
         
-    }
+    
 
 
 }

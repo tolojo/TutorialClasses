@@ -7,7 +7,6 @@ public class Teacher extends Person {
     private static int nextNumber=1;
     private int mecNumber;
     private ArrayList<Unit> units;
-    private ArrayList<EnrolmentTeacher> enrolments;
 
 
         public Teacher(String name, char gender, LocalDate birthDay){
@@ -15,8 +14,11 @@ public class Teacher extends Person {
             this.mecNumber = nextNumber;
             nextNumber++;
             units = new ArrayList<>();
+           
         }
 
+
+      
         public int getMecNumber(){return mecNumber;}
         public void setMecNumber(int mecNumber){this.mecNumber=mecNumber;}
         
@@ -30,26 +32,14 @@ public class Teacher extends Person {
         public void setBirthDay(LocalDate birthDay){this.birthDay= birthDay;}
 
         public ArrayList<Unit> getUnits(){return units;}
-        public EnrolmentTeacher getEnrolmentByUnitId(int unitId){
-            for (EnrolmentTeacher enr:enrolments)
-            if (enr.getUnit().getId()==unitId)return enr;
-        return null;
-        }
-        public ArrayList<EnrolmentTeacher> getEnrolmentTeacher(){
-            return enrolments;
-        }
-
-
-        public void enrollTeacher(EnrolmentTeacher enrolment) {
-                enrolments.add(enrolment);
-                enrolment.getUnit().getEnrolmentsTeacher().add(enrolment);
             
-            }
-
-
-      
-            @Override
-       
+        
+        public void implementUnit(Unit unit) {
+            units.add(unit);
+            unit.getTeachers().add(this);
+        }
+        
+        @Override
             public String getReference(){return "T<"+mecNumber+">";}
     
     }
