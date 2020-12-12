@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class TeacherRepository {
     private static ArrayList<Teacher> teachers = new ArrayList<Teacher>();
     
-    private Unit unit;
+   
     
 
     public static void populate(){
@@ -27,17 +27,11 @@ public class TeacherRepository {
         return null;
     }
 
-    public static Unit getUnit(Unit unit) {
+    public static ArrayList<Unit> getUnitsFromTeacher(int mecNumber) {
         for(Teacher teacher: teachers)
-        {
-            teacher.getUnits() = unit;
-        
-        
-        }
-
-            
-       
-       
+            if (teacher.getMecNumber()==mecNumber) 
+                return teacher.getUnits();
+        return null;
     }
 
   //  public static addUnit(){
