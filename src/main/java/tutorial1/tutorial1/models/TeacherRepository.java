@@ -34,7 +34,14 @@ public class TeacherRepository {
         return null;
     }
 
-  //  public static addUnit(){
+    public static void addUnit(Unit unit, int mecNumber){
+        for (Teacher teacher: teachers)
+            if (teacher.getMecNumber()==mecNumber) teacher.getUnits().add(unit);  
+    }
+    public static void removeUnit(Unit unit, int mecNumber){
+        for (Teacher teacher: teachers)
+            if (teacher.getMecNumber()==mecNumber) teacher.getUnits().remove(unit);  
+    }
 
 
         

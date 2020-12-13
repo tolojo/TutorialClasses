@@ -25,14 +25,20 @@ public class PersonController {
 
 
  @GetMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
- public List<Person> getReference() {
+ public Person getReference(String reference) {
  logger.info("Given a reference, send that person");
  ArrayList<Person> persons = new ArrayList<>();
- person.getReference();
- return persons;
+ persons.addAll(StudentRepository.getStudents());
+ persons.addAll(TeacherRepository.getTeachers());
+  Person person: persons; 
+ if(reference==persons.getReference())
+
+   return persons;
+
+  
+   
+ 
+ 
  }
-
-
-
  
 }
